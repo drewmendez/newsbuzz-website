@@ -1,6 +1,7 @@
 "use client";
 
 import { useToggleContext } from "@/context/ToggleState";
+
 import Search from "./ui/Search";
 
 export default function MobileMenu() {
@@ -8,10 +9,10 @@ export default function MobileMenu() {
 
   return (
     <aside
-      className={`absolute ${isOpen ? "left-0" : "-left-[100%]"} w-full p-4 transition-all duration-300`}
+      className={`fixed ${isOpen ? "left-0" : "-left-full"} h-full w-full bg-white px-4 py-6 transition-all duration-300`}
     >
       <Search />
-      <nav className="font-heading mt-4 grid gap-5 text-xl font-bold">
+      <nav className="mt-4 grid gap-5 bg-white font-heading text-xl font-bold">
         <a href="">Home</a>
         <a href="">General</a>
         <a href="">Business</a>
