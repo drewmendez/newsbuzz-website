@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import Header from "../components/Header";
-import ToggleContextProvider from "../context/ToggleState";
-import MobileMenu from "../components/MobileMenu";
+import Header from "@/components/Header";
+import ToggleContextProvider from "@/context/ToggleState";
+import MobileMenu from "@/components/MobileMenu";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "NewsBuzz",
@@ -17,11 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-body text-lg">
+      <body className="bg-[#fdfdfd] font-body text-base">
         <ToggleContextProvider>
           <Header />
           <MobileMenu />
           {children}
+          <Footer />
         </ToggleContextProvider>
       </body>
     </html>

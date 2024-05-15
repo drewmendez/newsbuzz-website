@@ -10,7 +10,7 @@ export default function Search() {
         type="text"
         placeholder="Search"
       />
-      <button className="-mr-3 ml-auto rounded-full bg-yellow-600 p-2 text-white">
+      <button className="-mr-3 ml-auto rounded-full bg-accent p-2 text-white duration-300 hover:opacity-70">
         <FaSearch />
       </button>
     </div>

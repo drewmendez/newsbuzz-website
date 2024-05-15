@@ -11,6 +11,10 @@ const config: Config = {
       fontFamily: {
         heading: ["Sora", "sans-serif"],
         body: ["DM Sans", "sans-serif"],
+        tags: ["Big Shoulders Display", "sans-serif"],
+      },
+      colors: {
+        accent: "#facc15",
       },
     },
   },
