@@ -9,7 +9,6 @@ export default function Hamburger() {
 
   const handleClick = () => {
     setIsOpen(!isOpen);
-    document.body.style.overflow = isOpen ? "unset" : "hidden";
   };
 
   return (
