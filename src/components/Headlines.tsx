@@ -31,16 +31,22 @@ export default async function Headlines() {
             <Link
               className="duration-300 hover:opacity-70"
               href={headline1.url}
+              target="_blank"
             >
               {headline1.title}
             </Link>
           </h2>
           <hr className="h-1 w-28 bg-accent" />
           <p className="my-2 font-heading text-[#444444]">
-            <Link href={headline1.url}>{headline1.description}</Link>
+            <Link href={headline1.url} target="_blank">
+              {headline1.description}
+            </Link>
           </p>
           <p className="font-heading text-sm font-semibold uppercase text-[#767676]">
-            BY {headline1.author}
+            BY{" "}
+            {headline1.author === null || headline1.author.includes("https")
+              ? "unknown"
+              : headline1.author}
           </p>
         </div>
       </article>
@@ -75,7 +81,10 @@ export default async function Headlines() {
             </Link>
           </p>
           <p className="font-heading text-sm font-semibold uppercase text-[#767676]">
-            BY {headline2.author}
+            BY{" "}
+            {headline2.author === null || headline2.author.includes("https")
+              ? "unknown"
+              : headline2.author}
           </p>
         </div>
       </article>
