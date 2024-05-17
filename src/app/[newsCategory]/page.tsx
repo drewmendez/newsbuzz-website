@@ -7,7 +7,7 @@ export default function NewsCategoryPage({
   params: { newsCategory: string };
 }) {
   return (
-    <main className="px-4 pt-6">
+    <main className="px-4 pb-14 pt-6">
       <div className="mx-auto max-w-[1200px]">
         <div className="max-w-[800px]">
           <div className="mb-8 ml-4 inline-block rounded-lg border-2 border-black p-4 [box-shadow:-10px_10px_0px_3px_rgba(250,204,21,1)] sm:border-4">

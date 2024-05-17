@@ -1,6 +1,7 @@
 import { ApiData } from "@/types/apiData";
 import { getIndexWithValue } from "@/utils/getIndexWithValue";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 export default async function CategoryHeadline({
   category,
@@ -14,7 +15,16 @@ export default async function CategoryHeadline({
     },
   );
 
+  if (res.status !== 200) {
+    notFound();
+  }
+
   const data: ApiData = await res.json();
+
+  if (data.totalResults === 0) {
+    notFound();
+  }
+
   const headline = data.articles[getIndexWithValue(data, 0)];
 
   return (

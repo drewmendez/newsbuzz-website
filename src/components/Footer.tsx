@@ -5,7 +5,7 @@ import Accordion from "./ui/Accordion";
 
 export default function Footer() {
   return (
-    <footer className="mt-14 border-t border-[#e2e2e2] px-4 py-6">
+    <footer className="border-t border-[#e2e2e2] px-4 py-6">
       <div className="mx-auto max-w-[1200px]">
         <div className="min-[930px]:flex min-[930px]:divide-x min-[930px]:pb-6">
           <div className="mb-6 min-[930px]:mr-12">
