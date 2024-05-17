@@ -26,7 +26,7 @@ export default function Footer() {
         </div>
         <div className="min-[930px]:border-t min-[930px]:border-[#e2e2e2]">
           <p className="pt-4 text-center font-heading text-sm text-[#767676]">
-            Design Reference by :{" "}
+            Design Reference :{" "}
             <a href="https://www.sfgate.com" target="_blank">
               SFGATE
             </a>
