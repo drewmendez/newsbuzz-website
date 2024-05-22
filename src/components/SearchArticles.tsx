@@ -2,13 +2,9 @@ import { ApiData } from "@/types/apiData";
 import { Article } from "@/types/article";
 import Link from "next/link";
 
-export default async function CategoryArticles({
-  category,
-}: {
-  category: string;
-}) {
+export default async function CategoryArticles({ query }: { query: string }) {
   const res = await fetch(
-    `https://newsapi.org/v2/everything?q=${category}&apiKey=${process.env.API_KEY}`,
+    `https://newsapi.org/v2/everything?q=${query}&apiKey=${process.env.API_KEY}`,
     {
       next: { revalidate: 86400 }, // data cached for 24 hours
     },
@@ -17,6 +13,10 @@ export default async function CategoryArticles({
   const articles = data.articles.filter(
     (article) => article.urlToImage !== null,
   );
+
+  if (articles.length === 0) {
+    return <p className="font-heading text-red-500">No Articles.</p>;
+  }
 
   return (
     <div className="divide-y">

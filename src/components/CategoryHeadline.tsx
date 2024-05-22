@@ -41,13 +41,19 @@ export default async function CategoryHeadline({
           {headline.source.name}
         </p>
         <h2 className="my-2 font-heading text-2xl font-bold sm:text-3xl">
-          <Link className="duration-300 hover:opacity-70" href={headline.url}>
+          <Link
+            className="duration-300 hover:opacity-70"
+            href={headline.url}
+            target="_blank"
+          >
             {headline.title}
           </Link>
         </h2>
         <hr className="h-1 w-28 bg-accent" />
         <p className="my-2 font-heading text-[#444444]">
-          <Link href={headline.url}>{headline.description}</Link>
+          <Link href={headline.url} target="_blank">
+            {headline.description}
+          </Link>
         </p>
         <p className="font-heading text-sm font-semibold uppercase text-[#767676]">
           BY {headline.author ? headline.author : "unknown"}
