@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import CategoryArticles from "@/components/CategoryArticles";
 import CategoryHeadline from "@/components/CategoryHeadline";
+
+export function generateMetadata({
+  params,
+}: {
+  params: { newsCategory: string };
+}): Metadata {
+  return {
+    title:
+      params.newsCategory.charAt(0).toUpperCase() +
+      params.newsCategory.slice(1),
+  };
+}
 
 export default function NewsCategoryPage({
   params,

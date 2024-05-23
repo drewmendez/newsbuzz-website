@@ -13,7 +13,10 @@ export default function Search() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    router.push("/search?q=" + search);
+    if (!search.trim()) {
+      return;
+    }
+    router.push("/search?q=" + search.trim());
     inputRef?.current?.blur();
     setSearch("");
     if (window.innerWidth < 1024) {
