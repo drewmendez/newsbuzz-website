@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ApiData } from "@/types/apiData";
 import { getIndexWithValue } from "@/utils/getIndexWithValue";
 
@@ -35,28 +34,28 @@ async function TopArticle({ category }: TopArticleProps) {
     <article className="flex justify-between gap-2 [&:not(:first-child)]:pt-5 [&:not(:last-child)]:pb-5">
       <div>
         <span className="mb-1 block font-tags text-[14.224px] font-[900] uppercase tracking-[1px] text-accent ">
-          <Link className="duration-300 hover:opacity-70" href={`/${category}`}>
+          <a className="duration-300 hover:opacity-70" href={`/${category}`}>
             {category}
-          </Link>
+          </a>
         </span>
 
         <h2 className="font-heading text-lg font-bold sm:text-2xl md:text-base">
-          <Link
+          <a
             className="duration-300 hover:opacity-70"
             href={article.url}
             target="_blank"
           >
             {article.title}
-          </Link>
+          </a>
         </h2>
       </div>
-      <Link className="shrink-0" href={article.url} target="_blank">
+      <a className="shrink-0" href={article.url} target="_blank">
         <img
           className="aspect-square h-[78px] w-[78px] object-cover sm:h-[100px] sm:w-[100px] md:h-[78px] md:w-[78px]"
           src={article.urlToImage}
           alt={article.title}
         />
-      </Link>
+      </a>
     </article>
   );
 }
