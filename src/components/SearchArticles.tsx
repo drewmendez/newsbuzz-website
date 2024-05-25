@@ -10,6 +10,11 @@ export default async function CategoryArticles({ query }: { query: string }) {
     },
   );
   const data: ApiData = await res.json();
+
+  if (data.status === "error") {
+    return <p className="font-heading text-red-500">{data.message}</p>;
+  }
+
   const articles = data.articles.filter(
     (article) => article.urlToImage !== null,
   );
